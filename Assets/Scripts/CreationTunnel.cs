@@ -4,7 +4,7 @@ using System.Collections;
 public class CreationTunnel : MonoBehaviour {
 
     public GameObject Obstacle;
-    int x;
+    float x;
 
 	// Use this for initializationn
 	void Start () {
@@ -20,7 +20,7 @@ public class CreationTunnel : MonoBehaviour {
 
     void RandomMethod()
     {
-        x = Random.Range(0, 4);
+        x = Random.Range(-2.5f, 2.5f);
        
     }
 }

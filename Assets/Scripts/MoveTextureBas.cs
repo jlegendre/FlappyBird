@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveTextureBas : MonoBehaviour {
 
-    public Vector2 vitesse = new Vector2(-5, 0);
+    public Vector2 vitesse = new Vector2(0, 0);
     // Use this for initialization
     void Start()
     {
