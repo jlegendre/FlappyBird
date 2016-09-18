@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class creationTriggerScore : MonoBehaviour {
 
-    public Text hightScore;
+    
     public Text score;
     public GameObject Obstacle;
     private int Hight_score = 0;
     int x;
     public static int i;
+
+    public AudioSource source;
+    public AudioClip clip;
 
     
     // Use this for initialization
@@ -17,8 +20,11 @@ public class creationTriggerScore : MonoBehaviour {
     {
         
         i = 0;
-        InvokeRepeating("createtriggerScore", 6f, 1.5f);
-        
+        InvokeRepeating("createtriggerScore", 5.75f, 1.5f);
+
+
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -28,7 +34,8 @@ public class creationTriggerScore : MonoBehaviour {
         
         i++;
         score.text = "" + i;
-       
+        source.clip = clip;
+        source.Play();
 
 
         if (PlayerPrefs.GetInt("HightScore") < i)

@@ -17,8 +17,7 @@ public class BirdControler : MonoBehaviour {
     public Canvas canvasReplay;
     public Text hightScoreText;
     public Text scoreText;
-
-
+    
     // Use this for initialization
     void Start () {
 
@@ -26,23 +25,38 @@ public class BirdControler : MonoBehaviour {
         sourceGameOver = GetComponent<AudioSource>();
 
         canvasReplay.enabled = false;
-        Time.timeScale = 1;
-        button.onClick.AddListener(() => { restartGame(); });
+        Time.timeScale = 0;
+        button.onClick.AddListener(() =>
+        {
+            restartGame();
+            string jouer = "jouer";
+            PlayerPrefs.SetString("jouer", jouer);
+        });
 
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-       
         // lorsque l'on appuie sur la touche Espace ou qu'on appui sur l'écran(sous Android)
         // on ajoute une forceSaut et on joue la musique du saut
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            GetComponent<Rigidbody2D>().AddForce(forceSaut);
-            source.clip = clipvideo;
-            source.Play();
-        }
+       
+        if(PlayerPrefs.GetString("jouer").Equals("jouer") || MainMenu.debut == true) {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                
+                Time.timeScale = 1;
+                GetComponent<Rigidbody2D>().AddForce(forceSaut);
+
+                if (Time.timeScale == 1)
+                {
+                    source.clip = clipvideo;
+                    source.Play();
+                }
+            }
+            }
+        
+        
    //     Vector2 positionCamera = Camera.main.WorldToScreenPoint(transform.position);
 
    //     if (positionCamera.y > Screen.height || positionCamera.y < 0){
@@ -64,10 +78,13 @@ public class BirdControler : MonoBehaviour {
             scoreText.text = "" + creationTriggerScore.i;
             canvasReplay.enabled = true;
             Time.timeScale = 0;
+            MainMenu.debut = false;
+            PlayerPrefs.SetString("jouer", "pasjouer");
         }
     }
 
     void restartGame() {
         SceneManager.LoadScene("Flappy Bird");
+       
     }
 }
