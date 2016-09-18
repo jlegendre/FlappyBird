@@ -46,7 +46,7 @@ public class BirdControler : MonoBehaviour {
             {
                 
                 Time.timeScale = 1;
-                GetComponent<Rigidbody2D>().AddForce(forceSaut);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 8);
 
                 if (Time.timeScale == 1)
                 {

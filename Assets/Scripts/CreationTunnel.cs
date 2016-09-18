@@ -8,7 +8,7 @@ public class CreationTunnel : MonoBehaviour {
 
 	// Use this for initializationn
 	void Start () {
-        InvokeRepeating("createTunnel", 1.5f, 1.5f);
+        InvokeRepeating("createTunnel", 0, 1.5f);
 	}
 	
 	// Update is called once per frame

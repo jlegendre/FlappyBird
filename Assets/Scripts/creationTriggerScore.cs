@@ -20,7 +20,7 @@ public class creationTriggerScore : MonoBehaviour {
     {
         
         i = 0;
-        InvokeRepeating("createtriggerScore", 5.75f, 1.5f);
+        InvokeRepeating("createtriggerScore", 3.7f, 1.5f);
 
 
         source = GetComponent<AudioSource>();
