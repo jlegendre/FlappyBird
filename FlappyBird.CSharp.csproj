@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CreationTextureBas.cs" />
     <Compile Include="Assets\Scripts\CreationTunnel.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MouvementGetReady.cs" />
     <Compile Include="Assets\Scripts\MouvementTriggerScore.cs" />
     <Compile Include="Assets\Scripts\MouvementTunnel.cs" />
     <Compile Include="Assets\Scripts\MoveTextureBas.cs" />
