@@ -17,12 +17,6 @@ public class CreationTextureBas : MonoBehaviour {
         Instantiate(Obstacle);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == "Cube")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    
 }
 

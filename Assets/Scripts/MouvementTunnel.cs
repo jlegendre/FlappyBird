@@ -13,4 +13,12 @@ public class MouvementTunnel : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Cube")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

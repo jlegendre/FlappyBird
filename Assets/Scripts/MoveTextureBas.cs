@@ -16,4 +16,13 @@ public class MoveTextureBas : MonoBehaviour {
     {
 
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Cube")
+        {
+           
+            Destroy(this.gameObject);
+        }
+    }
 }

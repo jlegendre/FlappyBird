@@ -23,12 +23,6 @@ public class CreationTunnel : MonoBehaviour {
         x = Random.Range(-2.75f, 2.25f);
        
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.name == "Cube")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    
 
 }
