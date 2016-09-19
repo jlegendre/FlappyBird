@@ -20,7 +20,15 @@ public class CreationTunnel : MonoBehaviour {
 
     void RandomMethod()
     {
-        x = Random.Range(-2.25f, 2.25f);
+        x = Random.Range(-2.75f, 2.25f);
        
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.name == "Cube")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 }
