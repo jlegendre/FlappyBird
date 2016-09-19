@@ -20,7 +20,7 @@ public class CreationTunnel : MonoBehaviour {
 
     void RandomMethod()
     {
-        x = Random.Range(-2.5f, 2.5f);
+        x = Random.Range(-2.25f, 2.25f);
        
     }
 }

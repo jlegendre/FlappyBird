@@ -18,6 +18,8 @@ public class BirdControler : MonoBehaviour {
     public Canvas canvasReplay;
     public Text hightScoreText;
     public Text scoreText;
+
+    public Text score;
     
     // Use this for initialization
     void Start () {
@@ -83,6 +85,7 @@ public class BirdControler : MonoBehaviour {
             hightScoreText.text = "" + PlayerPrefs.GetInt("HightScore");
             scoreText.text = "" + creationTriggerScore.i;
             canvasReplay.enabled = true;
+            score.enabled = false;
             Time.timeScale = 0;
             MainMenu.debut = false;
             PlayerPrefs.SetString("jouer", "pasjouer");
