@@ -13,7 +13,8 @@ public class BirdControler : MonoBehaviour {
     public AudioClip clipvideoGameOver;
     public AudioSource sourceGameOver;
 
-    public Button button;
+    public Button buttonReplay;
+    public Button buttonMenu;
     public Canvas canvasReplay;
     public Text hightScoreText;
     public Text scoreText;
@@ -26,11 +27,16 @@ public class BirdControler : MonoBehaviour {
 
         canvasReplay.enabled = false;
         Time.timeScale = 0;
-        button.onClick.AddListener(() =>
+        buttonReplay.onClick.AddListener(() =>
         {
             restartGame();
             string jouer = "jouer";
             PlayerPrefs.SetString("jouer", jouer);
+        });
+
+        buttonMenu.onClick.AddListener(() =>
+        {
+            restartMenu();
         });
 
 
@@ -86,5 +92,11 @@ public class BirdControler : MonoBehaviour {
     void restartGame() {
         SceneManager.LoadScene("Flappy Bird");
        
+    }
+
+    void restartMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+
     }
 }
